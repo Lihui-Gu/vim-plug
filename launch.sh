@@ -1,9 +1,14 @@
+#!/bin/bash
+
+directory=$HOME/.vim/autoload/
+
+if [ ! -d "$directory" ]; then
+    echo "mkdir "$directory
+    mkdir -p "$directory"
+fi
+
 cp plug.vim  ~/.vim/autoload/
 cp .vimrc ~/.vimrc
+cp .inputrc ~/.inputrc
 
-echo '"\e[A": history-search-backward' >> ~/.inputrc
-echo '"\e[B": history-search-forward' >> ~/.inputrc
-echo 'set show-all-if-ambiguous on' >> ~/.inputrc
-echo 'set completion-ignore-case on' >> ~/.inputrc
-
-bind -f  ~/.inputrc
+echo "please run bind -f  ~/.inputrc"
